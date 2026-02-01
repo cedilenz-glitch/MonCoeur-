@@ -28,13 +28,13 @@
   }
 
   h1 {
-    margin-bottom: 12px;
     font-size: 26px;
+    margin-bottom: 10px;
   }
 
   p {
     font-size: 17px;
-    margin-bottom: 26px;
+    margin-bottom: 24px;
   }
 
   .buttons {
@@ -60,22 +60,21 @@
 
   #no {
     background-color: #e0e0e0;
-    position: relative;
   }
 
-  /* ❤️ After-Yes styles */
+  /* After Yes */
   .photo {
     width: 80%;
     max-width: 280px;
     border-radius: 22px;
-    margin: 20px 0;
+    margin: 18px 0;
     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
   }
 
   .heart {
     position: fixed;
     bottom: -20px;
-    font-size: 24px;
+    font-size: 22px;
     animation: floatUp 4s linear forwards;
     pointer-events: none;
   }
@@ -91,7 +90,7 @@
 
 <div class="card">
   <h1>Océane 💖</h1>
-  <p>Will you be my Valentine?</p>
+  <p>Will you be mine?</p>
 
   <div class="buttons">
     <button id="yes" onclick="yesClicked()">Yes 💖</button>
@@ -126,11 +125,11 @@ function yesClicked() {
       background:linear-gradient(135deg,#ff9a9e,#fad0c4);
     ">
       <h1 style="font-size:36px; margin-bottom:8px;">Yay 💖</h1>
-      <p style="font-size:22px; margin-bottom:16px;">Can’t wait.</p>
+      <p style="font-size:22px; margin-bottom:14px;">Can’t wait.</p>
 
       <img class="photo" src="us.jpg" alt="Nous">
 
-      <p style="font-size:18px; opacity:0.85;">Mon cœur.</p>
+      <p style="font-size:18px; opacity:0.9;">Je t’aime mon cœur.</p>
     </div>
   `;
   startHearts();
@@ -142,10 +141,10 @@ function startHearts() {
     heart.className = "heart";
     heart.innerHTML = "❤️";
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (18 + Math.random() * 22) + "px";
+    heart.style.fontSize = (18 + Math.random() * 20) + "px";
     document.body.appendChild(heart);
     setTimeout(() => heart.remove(), 4000);
-  }, 350);
+  }, 400);
 }
 </script>
 
