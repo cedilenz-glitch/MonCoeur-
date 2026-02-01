@@ -98,48 +98,28 @@ function moveButton() {
     noButton.style.left = Math.random() * maxX + "px";
     noButton.style.top  = Math.random() * maxY + "px";
 }
-
+<script>
 function yesClicked() {
-    document.body.innerHTML = `
-        <div style="
-            height:100vh;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            flex-direction:column;
-            text-align:center;
-            padding:20px;
-        ">
-            <h1 style="font-size:32px;">💖 YAY! 💖</h1>
-            <p style="font-size:20px;">Best decision ever, Océane 😘</p>
+  document.body.innerHTML = `
+    <div style="
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      text-align:center;
+      padding:22px;
+      font-family:-apple-system, BlinkMacSystemFont, sans-serif;
+      background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    ">
+      <h1 style="font-size:36px; margin-bottom:10px;">Yay 💖</h1>
+      <p style="font-size:22px; margin-bottom:18px;">Can’t wait.</p>
 
-            <img class="photo" src="data:image/jpeg;base64,
-/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUTEhMWFhUXGRgYGBgXGRgaGhgX
-GxoaGhoYHiggGBolHRgYITEhJSkrLi4uGh8zODMtNygtLisBCgoKDg0OGxAQGy0lICUt
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAWgB
-YAMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAEBQADBgIBB//EADYQAAIBAgQE
-BAMGBQUAAAAAAAABAgMRBBIhMQVBUWEGInGBkaGxwdHwFSNCUtLh8RUz/8QAGAEBAQAD
-AAAAAAAAAAAAAAAAAQIDBAX/xAAiEQEBAAICAgIDAAAAAAAAAAAAAQIRAyESMUEEIlET
-MkH/2gAMAwEAAhEDEQA/AP8A…(gekürzt)
-">
-            <p style="font-size:18px;">Happy Valentine’s Day 💕</p>
-        </div>
-    `;
-    startHearts();
-}
+      <img class="photo" src="us.jpg" alt="Nous">
 
-function startHearts() {
-    setInterval(() => {
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.innerHTML = "❤️";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.fontSize = (20 + Math.random() * 20) + "px";
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 4000);
-    }, 300);
+      <p style="font-size:18px; opacity:0.85;">Mon cœur.</p>
+    </div>
+  `;
+  startHearts();
 }
 </script>
-
-</body>
-</html>
