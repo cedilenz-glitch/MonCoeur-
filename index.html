@@ -2,103 +2,116 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>💘 Valentine?</title>
+<title>Mon Cœur 💖</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-        height: 100vh;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-    }
+  body {
+    margin: 0;
+    height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
 
-    .card {
-        background: white;
-        padding: 32px 28px;
-        border-radius: 24px;
-        text-align: center;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        width: 90%;
-        max-width: 360px;
-    }
+  .card {
+    background: white;
+    padding: 32px 28px;
+    border-radius: 26px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    width: 90%;
+    max-width: 360px;
+  }
 
-    h1 { margin-bottom: 12px; font-size: 24px; }
-    p { font-size: 16px; margin-bottom: 28px; }
+  h1 {
+    margin-bottom: 12px;
+    font-size: 26px;
+  }
 
-    .buttons { position: relative; height: 120px; }
+  p {
+    font-size: 17px;
+    margin-bottom: 26px;
+  }
 
-    button {
-        font-size: 18px;
-        padding: 14px 28px;
-        border: none;
-        border-radius: 16px;
-        cursor: pointer;
-    }
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    position: relative;
+    height: 70px;
+  }
 
-    #yes { background-color: #ff4d6d; color: white; }
+  button {
+    font-size: 18px;
+    padding: 14px 26px;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+  }
 
-    #no {
-        background-color: #e0e0e0;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-top: 16px;
-    }
+  #yes {
+    background-color: #ff4d6d;
+    color: white;
+  }
 
-    .photo {
-        width: 80%;
-        max-width: 300px;
-        border-radius: 20px;
-        margin: 20px 0;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    }
+  #no {
+    background-color: #e0e0e0;
+    position: relative;
+  }
 
-    .heart {
-        position: fixed;
-        bottom: -20px;
-        font-size: 24px;
-        animation: floatUp 4s linear forwards;
-        pointer-events: none;
-    }
+  /* ❤️ After-Yes styles */
+  .photo {
+    width: 80%;
+    max-width: 280px;
+    border-radius: 22px;
+    margin: 20px 0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  }
 
-    @keyframes floatUp {
-        0% { transform: translateY(0); opacity: 1; }
-        100% { transform: translateY(-100vh); opacity: 0; }
-    }
+  .heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 24px;
+    animation: floatUp 4s linear forwards;
+    pointer-events: none;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+  }
 </style>
 </head>
 
 <body>
 
 <div class="card">
-    <h1>Océane 💖</h1>
-    <p>Will you be my Valentine?</p>
+  <h1>Océane 💖</h1>
+  <p>Will you be my Valentine?</p>
 
-    <div class="buttons">
-        <button id="yes" onclick="yesClicked()">Yes 💘</button>
-        <button id="no">No 🙈</button>
-    </div>
+  <div class="buttons">
+    <button id="yes" onclick="yesClicked()">Yes 💖</button>
+    <button id="no">No 🙈</button>
+  </div>
 </div>
 
 <script>
 const noButton = document.getElementById("no");
 
-noButton.addEventListener("touchstart", moveButton);
-noButton.addEventListener("mouseover", moveButton);
-noButton.addEventListener("click", moveButton);
+noButton.addEventListener("mouseover", moveNo);
+noButton.addEventListener("touchstart", moveNo);
+noButton.addEventListener("click", moveNo);
 
-function moveButton() {
-    const maxX = window.innerWidth - noButton.offsetWidth;
-    const maxY = 120;
-    noButton.style.left = Math.random() * maxX + "px";
-    noButton.style.top  = Math.random() * maxY + "px";
+function moveNo() {
+  const x = (Math.random() * 120) - 60;
+  const y = (Math.random() * 60) - 30;
+  noButton.style.transform = `translate(${x}px, ${y}px)`;
 }
-<script>
+
 function yesClicked() {
   document.body.innerHTML = `
     <div style="
@@ -108,12 +121,12 @@ function yesClicked() {
       justify-content:center;
       flex-direction:column;
       text-align:center;
-      padding:22px;
+      padding:24px;
       font-family:-apple-system, BlinkMacSystemFont, sans-serif;
       background:linear-gradient(135deg,#ff9a9e,#fad0c4);
     ">
-      <h1 style="font-size:36px; margin-bottom:10px;">Yay 💖</h1>
-      <p style="font-size:22px; margin-bottom:18px;">Can’t wait.</p>
+      <h1 style="font-size:36px; margin-bottom:8px;">Yay 💖</h1>
+      <p style="font-size:22px; margin-bottom:16px;">Can’t wait.</p>
 
       <img class="photo" src="us.jpg" alt="Nous">
 
@@ -122,4 +135,19 @@ function yesClicked() {
   `;
   startHearts();
 }
+
+function startHearts() {
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (18 + Math.random() * 22) + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 4000);
+  }, 350);
+}
 </script>
+
+</body>
+</html>
